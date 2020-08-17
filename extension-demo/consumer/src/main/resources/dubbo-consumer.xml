@@ -7,12 +7,11 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="${systemInfo.appName}"  />
-    <dubbo:registry address="${dubbo.registry}"  />
+    <dubbo:registry address="${dubbo.registry}" client="zkclient" />
     <dubbo:provider export="${dubbo.export}" token="${dubbo.token}"/>
     <dubbo:protocol name="dubbo" port="${dubbo.port}" host="${dubbo.host}" />
     <dubbo:monitor protocol="registry"/>
     <dubbo:consumer timeout="${dubbo.timeout}" check="false"/>
 
-    <dubbo:doc name="${systemInfo.appName}" enable="${dubbo.doc.enable}" version="${application.version}" groupId="${application.groupId}" artifactId="${application.artifactId}" address="${dubbo.registry}"/>
 
 </beans>
